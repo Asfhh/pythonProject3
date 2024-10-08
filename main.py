@@ -194,3 +194,51 @@
 #     print(f'| Specializacija: {specializacija}                |')
 #     print("-------------------------------------------")
 # info_policinko()
+
+
+#7
+# Sukurkite funkciją,
+# kuri išvestų 10 atsitiktinių skaičių.
+# Po visų išvestų skaičių turėtų padėti tuščią eilutę.
+# Šią funkciją iškvieskite 5 kartus.
+#
+# import random
+#
+# def random_number():
+#     for _ in range(10):
+#         print(random.randint(1, 10), end=' ')
+#     print('\n')
+#
+# for _ in range(5):
+#     random_number()
+
+# 8\
+#
+# Sukurkite funkciją, kuri išvestų atsitiktinį skaičių.
+# Už funkcijos ribų sukurkite ciklą, kurį būtų vykdomas 10 kartų.
+# Iškvieskite sukurtą funkciją cikle.
+# Turėtumėte pamatyti 10 atsitiktinių skaičių.
+
+# import random
+# def betkokie_sk():
+#     return random.randint(1, 10)
+# for _ in range(10):
+#     print(betkokie_sk())
+
+# # 9
+# Sukurkite funkciją pasisveikinimui,
+# šiai funkcijai per argumentus perduokite vardą,
+# funkcijoje išveskite tekstą labas ir gautą vardą.
+# Sukurkite kitą funkciją, kuri irgi per argumentus gautų vardą, tačiau
+# pasakytų 'viso gero' ir patį vardą.
+# Ne funkcijose susikurkite kintamąjį vardui saugoti ir įrašykite vardą.
+# Iškvieskite abi funkcijas, perduodant kintamąjį joms.
+
+# def pasveik(vardas):
+#     print(f'Labas, {vardas}')
+# def sudievu(vardas):
+#     print(f'Iki, {vardas}')
+# vardas = 'Saulius'
+# pasveik(vardas)
+# sudievu(vardas)
+
