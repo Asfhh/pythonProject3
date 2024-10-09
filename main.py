@@ -331,7 +331,37 @@
 # atlikimas()
 
 #13. Susikurkite funkciją, kuri per argumentus priimtų žodžių masyvą.
-Funkcijoje išveskite visus žodžius iš masyvo atskirose
-(eilutėse nurodant) žodžio ilgį (simbolių kiekį).
-Už funkcijos ribų susikurkite žodžių masyvą ir užpildykite jį duomenimis.
-Iškvieskite sukurtą funkciją perduodant turimą masyvą.
+# Funkcijoje išveskite visus žodžius iš masyvo atskirose
+# (eilutėse nurodant) žodžio ilgį (simbolių kiekį).
+# Už funkcijos ribų susikurkite žodžių masyvą ir užpildykite jį duomenimis.
+# Iškvieskite sukurtą funkciją perduodant turimą masyvą.
+
+# def zodziu_masyvas(zodziai):
+#     for zodziai in zodziai:
+#         ilgis = len(zodziai)a
+#         print(f'Žodis {zodziai}, ilgis:  {ilgis}')
+# zodziu_sarasas =  ["keptuve", "koja", "kriauklė", "bulve", "slyva"]
+#
+# zodziu_masyvas(zodziai=zodziu_sarasas)
+
+#14. Susikurkite funkciją,
+# kuri per argumentus priimtų skaičių masyvą.
+# Funkcija turėtų atspausdinti visus skaičius,
+# šalia jų išvedant to skaičiaus kvadratą ir jį padalintą iš dviejų.
+# Už funkcijos ribų susikurkite du skaičių masyvus ir užpildykite jį duomenimis.
+# Iškvieskite funkciją du kartus, kiekvieną kartą perduodant skirtingą turimą masyvą.
+
+# def skaic(masyvas):
+#     for skaiciai in masyvas:
+#         kvadratas = skaiciai ** 2
+#         dalyba = skaiciai / 2
+#         print(f'Skaičius: {skaiciai}, Kvadratas: {kvadratas}, Dalyba iš dviejų: {dalyba}')
+#
+# masyvas1 = [1, 2, 3, 4, 5, 6]
+# masyvas2 = [11, 2, 8, 4, 5, 7]
+#
+# skaic(masyvas1)
+# print()
+# skaic(masyvas2)
+
+#15.
