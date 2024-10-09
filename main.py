@@ -242,3 +242,96 @@
 # pasveik(vardas)
 # sudievu(vardas)
 
+#10
+# Sukurkite funkciją, kuriai perduotumėte du skaičius.
+# Ši funkcija turi rasti kuris skaičius yra didesnis ir išvesti gautą atsakymą,
+# o jei skaičiai lygūs - tuomet išvesti, kad skaičiai lygūs.
+# Iškvieskite šią funkciją keletą kartų, duodant skirtingus skaičius.
+
+# def du_sk(sk1, sk2):
+#     if sk1 > sk2:
+#         return f'{sk1} yra didesnis už {sk2}.'
+#     elif sk1 < sk2:
+#         return f'{sk2} yra didesnis už {sk1}.'
+#     else:
+#         return 'Skaičiai yra lygūs.'
+# results = [
+#         du_sk(5, 10),
+#         du_sk(5, 20),
+#         du_sk(45, 30),
+#         du_sk(5, 40),
+#         du_sk(5, 50),
+#         du_sk(0, 0),
+#         du_sk(100, 1),
+#     ]
+#
+# for result in results:
+#     print(result)
+
+#11.Sukurkite funkciją, kuri per argumentus gautų automobilių duomenis
+# (markė, modelis, gamybos metai, darbinis tūris).
+# Ši funkcija turėtų šiuos duomenis išvesti kaip nors gražiai formatuotai.
+# Iškvieskite šią funkciją du kartus, perduodant skirtingus duomenis jai.
+
+# def auto_info(marke, modelis, metai, turis):
+#     print(f'--- Automobilio duomenys ---')
+#     print(f'Marke: {marke}')
+#     print(f'Modelis: {modelis}')
+#     print(f'Metai: {metai}')
+#     print(f'Tūris: {turis}')
+# auto_info('BMW', 'e46', 2003, 3)
+# auto_info(' Toyota', 'Prius', 2003, 2)
+
+#12. Sukurkite funkciją sumai skaičiuoti,
+# ši funkcija per argumentus turėtų gauti du skaičius,
+# bei išvesti patį veiksmą kartu su atsakymu (pvz 7 + 5 =12).
+# Sukurkite tokias pačias funkcijas skirtumui, sandaugai ir dalmeniui rasti.
+# Sukurkite dar vieną funkciją, kuri sugeneruotų du atsitiktinius skaičius,
+# bei iškviestų kitas 4 funkcijas, perduodant joms sugeneruotus skaičius.
+# Šią bendrąją funkciją iškvieskite keletą kartų.
+
+# import random
+#
+#
+# def sk_suma(a, b):
+#     result = a + b
+#     print(f'{a} + {b} = {result}')
+#
+#
+# def sk_skirtumas(a, b):
+#     result = a - b
+#     print(f'{a} - {b} = {result}')
+#
+#
+# def sk_sandauga(a, b):
+#     result = a * b
+#     print(f'{a} * {b} = {result}')
+#
+#
+# def sk_dalmuo(a, b):
+#     if b != 0:
+#         result = a / b
+#         print(f'{a} / {b} = {result}')  #
+#     else:
+#         print('Dalyba iš 0 negalima')
+#
+#
+# def atlikimas():
+#     sk1 = random.randint(1, 100)
+#     sk2 = random.randint(1, 100)
+#     print(f'\nSugeneruoti skaičiai: {sk1} ir {sk2}\n')
+#
+#     sk_suma(sk1, sk2)
+#     sk_skirtumas(sk1, sk2)
+#     sk_sandauga(sk1, sk2)
+#     sk_dalmuo(sk1, sk2)
+#
+# atlikimas()
+# atlikimas()
+# atlikimas()
+
+#13. Susikurkite funkciją, kuri per argumentus priimtų žodžių masyvą.
+Funkcijoje išveskite visus žodžius iš masyvo atskirose
+(eilutėse nurodant) žodžio ilgį (simbolių kiekį).
+Už funkcijos ribų susikurkite žodžių masyvą ir užpildykite jį duomenimis.
+Iškvieskite sukurtą funkciją perduodant turimą masyvą.
