@@ -777,37 +777,37 @@
 # Atspausdinkite simbolius stulpeliu.
 # Jei tai skaičius apgaubkite “ [ 7 ]”.
 # Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75].
+#
+# import random
+# import string
+#
+#
+# def sugen_stringai(ilgis: int):
+#     raides = string.ascii_letters
+#     skaiciai = string.digits
+#     simboliai = raides + skaiciai
+#     return ''.join(random.choice(simboliai) for _ in range(ilgis))
+#
+#
+# def spausdint_simbolius(simbol):
+#     i = 0
+#     skaiciai = ''
+#     while i < len(simbol):
+#         if simbol[i].isdigit():
+#             skaiciai += simbol[i]
+#         else:
+#             if skaiciai:
+#                 print(f'[{skaiciai}]')
+#                 skaiciai = ''
+#             print(f'[{simbol[i]}]')
+#         i += 1
+#
+#     if skaiciai:
+#         print(f'[{skaiciai}]')
+#
+#
+# random_string = sugen_stringai(10)
+# print('Sugeneruotas stringas:', random_string)
+# spausdint_simbolius(random_string)
 
-import random
-import string
-
-
-def sugen_stringai(ilgis: int):
-    raides = string.ascii_letters
-    skaiciai = string.digits
-    simboliai = raides + skaiciai
-    return ''.join(random.choice(simboliai) for _ in range(ilgis))
-
-
-def spausdint_simbolius(simbol):
-    i = 0
-    skaiciai = ''
-    while i < len(simbol):
-        if simbol[i].isdigit():
-            skaiciai += simbol[i]
-        else:
-            if skaiciai:
-                print(f'[{skaiciai}]')
-                skaiciai = ''
-            print(f'[{simbol[i]}]')
-        i += 1
-
-    if skaiciai:
-        print(f'[{skaiciai}]')
-
-
-random_string = sugen_stringai(10)
-print('Sugeneruotas stringas:', random_string)
-spausdint_simbolius(random_string)
-
-
+dd
