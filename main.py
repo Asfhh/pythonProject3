@@ -633,3 +633,52 @@
 # kuriose būtų naudojami default parametrai.
 # Iškvieskite šias funkcijas įvairiais būdais (perduodant visus argumentus, bei neperduodant tų kuriuos galima
 # praleisti (turinčius default reikšmes)).
+
+#                                   Funkcijos
+
+#1 Sukurkite Funkciją kuri priima du int tipo kintamuosius. Juos susumuoja ir atspausdina
+# def suma(a: int, b: int):
+#     rez = a + b
+#     print(f'Suma: {rez}')
+#
+# suma(2, 10)
+# suma(4, 7)
+
+#2. Sukurkite Funkciją kuri vadinasi PISq. Funkcija gražina float tipo reikšmę. Reikšmė yra : 9.8596; Gautą reikšmę atspausdinkite.
+
+# def PISq() -> float:
+#     return 9.8596
+#
+# result = PISq()
+# print(f'Reiškmė: {result}')
+
+#3. Sukurkite Funkciją kuri priima du int tipo kintamuosius.
+# Funkcija gražina skaičių sandaugą.;
+# Gautą reikšmę atspausdinkite.
+
+# def sandauga(a: int, b: int) -> int:
+#     return a * b
+# rezultatas = sandauga(2, 10)
+# print(f' Gautas rezultatas: {rezultatas}')
+
+#4. Sukurkite Funkciją kuri priima masyvą,
+# prasuka ciklą ir atspausdina kiekvieną narį vienoje eilutėje.
+
+# def funkcija(masyvas):
+#     for ciklas in masyvas:
+#         print(ciklas)
+# inf_masyv = 'Kiskis, upė, ir vaikai'
+# funkcija(inf_masyv)
+
+# 5. Sukurkite Funkciją kuri priima du int tipo kintamuosius,
+# min ir max reikšmėms nustatyti ir
+# sugeneruoja random int skaičių ir jį gražintų.
+
+# import random
+# def masyvas(min_r: int, max_r: int) -> int:
+#     return random.randint(min_r, max_r)
+# min_r = 1
+# max_r = 10
+# random_sk = masyvas(min_r, max_r)
+# print(f'Min: {min_r}, Max: {max_r}, Atsitiktinis skaičius: {random_sk}')
+
