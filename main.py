@@ -488,3 +488,148 @@
 #     daliklis = maziausias_daliklis(skaicius)
 #     print(f'Skaičius {skaicius} mažiausias daliklis yra {daliklis}')
 
+# 21.Susikurkite funkciją,
+# kuri per argumentus gautų skaičių.
+# Ji turėtų patikrinti ar šis skaičius yra pirminis
+# (grąžina True jei pirminis, ir False jei ne  pirminis).
+# Už funkcijos ribų sukite ciklą nuo 2 iki 15, kiekvienoje ciklo
+# iteracijoje išveskite tikrinamą skaičių ir šalia jo iškviestos funkcijos
+# atsakymą (pvz 10 false, 11 true, ...).
+
+# def pirminis(skaicius):
+#     if skaicius < 2:
+#         return False
+#     for i in range(2, int(skaicius ** 0.5) + 1):
+#         if skaicius % i == 0:
+#             return False
+#     return True
+#
+# for skaicius in range(2, 16):
+#     rezultatas = pirminis(skaicius)
+#     print(f'{skaicius}: {rezultatas}')
+
+# 22.Susikurkite bent 3 matematines funkcijas,
+# priimančias reikiamus argumentus
+# (pvz suma iš dviejų skaičių, suma iš trijų skaičių, skirtumas,
+# sandauga, dalyba)
+# ir grąžinančias atitinkamus atsakymus.
+# Taip pat, susikurkite funkciją,
+# kurioje būtų sugeneruojamas reikiamas kiekis atsitiktinių skaičių
+# ir išvedami visų skaičiavimų atsakymai su veiksmais
+# (iškviečiant atitinkamas kitas funkcijas ir perduodant reikiamus
+# kintamuosius) (pagal 23 pavyzdį). Iškvieskite šią pagrindinę funkciją bent
+# kartą.
+
+# import random
+# def suma_du(a, b):
+#     return a + b
+#
+# def suma_trys(a, b, c):
+#     return a + b + c
+#
+# def skirtumas(a, b):
+#     return a - b
+#
+# def sandauga(a, b):
+#     return a * b
+#
+# def dalyba(a, b):
+#     if b != 0:
+#         return a / b
+#     else:
+#         return 'Negalima dalinti iš 0 :)'
+
+# def skaiciavimas():
+#     skaic1 = random.randint(1, 20)
+#     skaic2 = random.randint(1, 20)
+#     skaic3 = random.randint(1, 20)
+#
+#     print(f'Skaičiai: {skaic1}, {skaic2}, {skaic3}')
+#     print(f"Suma (du): {skaic1} + {skaic2} = {suma_du(skaic1, skaic2)}")
+#     print(f"Suma (trys): {skaic1} + {skaic2} + {skaic3} = {suma_trys(skaic1, skaic2, skaic3)}")
+#     print(f"Skirtumas: {skaic1} - {skaic2} = {skirtumas(skaic1, skaic2)}")
+#     print(f"Sandauga: {skaic1} * {skaic2} = {sandauga(skaic1, skaic2)}")
+#     print(f"Dalyba: {skaic1} / {skaic2} = {dalyba(skaic1, skaic2)}")
+# skaiciavimas()
+
+#23.Susikurkite funkciją kuri priimtų skaičių masyvą per argumentus.
+#Ši funkcija turėtų rasti duotųjų skaičių sumą ir grąžinti gautą atsakymą.
+# Už funkcijos ribų susikurkite du skaičių masyvus ir užpildykite juos
+# duomenimis.
+# Iškvieskite turimą funkciją du kartus, jai abu kartus
+# perduodant skirtingą masyvą.
+# Gautus atsakymus išveskite. Taip pat, raskite kuri suma gavosi didesnė ir išveskite atsakymą.
+
+# def suma_masyvo(masyvas):
+#     return sum(masyvas)
+# masyvas1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 96]
+# masyvas2 = [5, 12, 52, 15, 31, 21, 5]
+#
+# suma1 = suma_masyvo(masyvas1)
+# suma2 = suma_masyvo(masyvas2)
+# print(f' 1. Suma: {suma1}')
+# print(f' 2. Suma: {suma2}')
+#
+# if suma1 > suma2:
+#     print(f' Pirmoji masyvo suma {suma1} yra didesnė už masyvo 2 sumą {suma2}')
+# elif suma2 > suma1:
+#     print(f' Antroji masyvo suma  {suma2} yra didesnė už masyvo 1 sumą {suma1}')
+# else:
+#     print(f'Šios sumos yra vienodos: {suma1}')
+
+
+# 24.Susikurkite funkciją kuri per argumentus priimtų žodžių masyvą.
+# Ji turėtų rasti ir grąžinti ilgiausią žodį masyve.
+# Už funkcijos ribų susikurkite žodžių masyvą.
+# Iškvieskite funkciją perduodant jai žodžių masyvą.
+# Gautą atsakymą išveskite, taip pat, nurodykite šio žodžio ilgį.
+
+# def pirm_masyvas(tekstas):
+# #     tekstukas = ""
+# #     for zodis in tekstas:
+# #         if len(zodis) > len(tekstukas):
+# #             tekstukas = zodis
+# #     return tekstukas
+# #
+# # antras_masyvas = ["naktis", "rytojus", "aušra", "mėnulis", "batas"]
+# # tekstukas = pirm_masyvas(antras_masyvas)
+# #
+# # print(f'Ilgiausias žodis: {tekstukas}')
+# # print(f'Simbolių skaičius: {len(tekstukas)}')
+
+#25. Susikurkite funkciją kuri per argumentus priimtų pažymių masyvą.
+# Ji turėtų patikrinti ar visi pažymiai teigiami:
+# jei visi teigiami turėtų grąžintų True kaip atsakymą,
+# o jei yra bent vienas neigiamas - False.
+# Susikurkite du pažymių masyvus.
+# Iškvieskite šią funkciją du kartus, abu kartus
+# perduodant skirtingus masyvus.
+# Gautus atsakymus paverskite į tekstą
+# (jeigu gavote True - išveskite tekstą 'visi studento pažymiai teigiami', jei
+# False - 'studentas turi bent vieną neigiamą pažymį'). Šiam iškonvertavimui
+# iš True/False į tekstą galite pamėginti pasikurti atskirą funkciją, jai
+# perduoti kitos funkcijos atsakymą.
+
+# def teigiami_pazym(pazymiai):
+#     neigiami_pazymiai = sum(1 for paz in pazymiai if paz <= 3)
+#     return neigiami_pazymiai == 0
+#
+# def tekstas(rezultatas):
+#     if rezultatas:
+#         return 'Visi studento pažymiai teigiami'
+#     else:
+#         return 'Studentas turi bent vieną neigiamą pažymį'
+#
+# pazymiai1 = [8, 10, 2, 5]
+# pazymiai2 = [5, 5, 10, 5, 7]
+#
+# rezultatas1 = teigiami_pazym(pazymiai1)
+# rezultatas2 = teigiami_pazym(pazymiai2)
+#
+# print(tekstas(rezultatas1))
+# print(tekstas(rezultatas2))
+
+#26.Pabandykite parašyti bent dvi pasirinktas funkcijas,
+# kuriose būtų naudojami default parametrai.
+# Iškvieskite šias funkcijas įvairiais būdais (perduodant visus argumentus, bei neperduodant tų kuriuos galima
+# praleisti (turinčius default reikšmes)).
