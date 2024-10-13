@@ -682,3 +682,132 @@
 # random_sk = masyvas(min_r, max_r)
 # print(f'Min: {min_r}, Max: {max_r}, Atsitiktinis skaičius: {random_sk}')
 
+# 6. Sukurkite Funkciją kuri sugeneruotų random int skaičių masyvą
+# ir jį gražintų.
+# Funkcija priima tris int tipo kintamuosius,
+# min, max ir length reikšmėms nustatyti.
+
+# import random
+# def masyvas(min_r: int, max_r: int, length_r: int):
+#     return [random.randint(min_r, max_r) for _ in range(length_r)]
+# min_R = 5
+# max_R = 24
+# length_R = 5
+# random_skaiciai = masyvas(min_R, max_R, length_R)
+# print(f'Atsitiktiniai skaičiai: {random_skaiciai}')
+
+# 7.Sukurkite Funkciją kuri panaudotų 6toje užduotyje sugeneruotą masyvą
+# (priimtų kaip kintamąjį), susumuotų ir gražintų reikšmę.
+# import random
+# def masyvas(min_r: int, max_r: int, length_r: int):
+#     return [random.randint(min_r, max_r) for _ in range(length_r)]
+# def suma(skaicai):
+#     return sum(skaicai)
+# min_r = 5
+# max_r = 24
+# length_r = 2
+#
+# random_skaiciai = masyvas(min_r, max_r, length_r)
+# print(f'Atsitiktiniai skaičiai: {random_skaiciai}')
+#
+# r_suma = suma(random_skaiciai)
+# print(f'Atsitiktinių skaičių suma:  {r_suma}')
+
+#8.Sukurkite Funkciją kuri priimtų 6toje užduotyje sugeneruotą masyvą
+# ir gražintų jos skaičių vidurkį (double).
+
+# import random
+#
+# def masyvas(min_r: int, max_r: int, length_r: int):
+#     return [random.randint(min_r, max_r) for _ in range(length_r)]
+#
+# def suma(skaicai):
+#     return sum(skaicai)
+#
+# def vidurkis(skaiciai):
+#     if len(skaiciai) == 0:
+#         return 0
+#     return suma(skaiciai) / len(skaiciai)
+#
+# min_r = 5
+# max_r = 24
+# length_r = 2
+#
+# random_skaiciai = masyvas(min_r, max_r, length_r)
+# print(f'Atsitiktiniai skaičiai: {random_skaiciai}')
+# r_suma = suma(random_skaiciai)
+# print(f'Atsitiktinių skaičių suma: {r_suma}')
+# r_vidurkis = vidurkis(random_skaiciai)
+# print(f'Vidurkis: {r_vidurkis}')
+
+#9. Sukurkite Funkciją kuri priimtų du int skaičius
+# ir atspausdintų stačiakampį užpildytą žvaigždutėmis.
+# Pirmas int - išoriniam ciklui, antras vidiniam.
+
+# def staciakamp(aukstis: int, plotis: int):
+#     for _ in range(aukstis):
+#         print('*' * plotis)
+# aukstis = 2
+# plotis = 10
+# staciakamp(aukstis, plotis)
+
+#10. Sukurkite Funkciją kuri priimtų sakinį kaip kintamąjį
+# ir atspausdintų kiek jame yra raidžių(simbolių) ir tarpų.
+# Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį)
+
+# def sakin(sakinys: str):
+#     raides = len(sakinys.replace(" ", ""))
+#     tarpai = sakinys.count(" ")
+#     print(f'Radžių skaičius: {raides}')
+#     print(f'Tarpu kiekis: {tarpai}')
+# sakinys = "Šiandien labai graži diena"
+# sakin(sakinys)
+
+
+#                       sunkesni
+# 1. Parašykite funkciją, kurios argumentas būtų tekstas,
+# kuris būtų atspausdinamas konsolėje pridedant “---” pradžioje ir gale.
+# PVZ (---labas---)
+
+# def tekstas(tekstas: str):
+#     print(f'---{tekstas}---')
+# tekstas('Labas')
+
+# 2. Sugeneruokite atsitiktinį stringą iš raidžių ir skaičių (10 simbolių)
+# Atspausdinkite simbolius stulpeliu.
+# Jei tai skaičius apgaubkite “ [ 7 ]”.
+# Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75].
+
+import random
+import string
+
+
+def sugen_stringai(ilgis: int):
+    raides = string.ascii_letters
+    skaiciai = string.digits
+    simboliai = raides + skaiciai
+    return ''.join(random.choice(simboliai) for _ in range(ilgis))
+
+
+def spausdint_simbolius(simbol):
+    i = 0
+    skaiciai = ''
+    while i < len(simbol):
+        if simbol[i].isdigit():
+            skaiciai += simbol[i]
+        else:
+            if skaiciai:
+                print(f'[{skaiciai}]')
+                skaiciai = ''
+            print(f'[{simbol[i]}]')
+        i += 1
+
+    if skaiciai:
+        print(f'[{skaiciai}]')
+
+
+random_string = sugen_stringai(10)
+print('Sugeneruotas stringas:', random_string)
+spausdint_simbolius(random_string)
+
+
