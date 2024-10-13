@@ -364,4 +364,127 @@
 # print()
 # skaic(masyvas2)
 
-#15.
+#15.Susikurkite funkciją, kuri per argumentus priimtų pažymių masyvą,
+# bei studento vardą su pavarde.
+# Funkcija turėtų išvesti studento vardą ir pavardę, jo pažymius.
+# Taip pat, suskaičiuoti vidurkį, bei jį išvesti.
+# Už funkcijos ribų susikurkite reikiamus kintamuosius ir masyvus, arba
+# objektus studentų pažymiams saugoti ir užpildykite juos duomenimis.
+# Iškvieskite šią funkciją perduodant visus reikalingus duomenis.
+
+# def masyvas(vardas, pavarde, pazymiai):
+#     print(f'Studento vardas: {vardas} {pavarde} ')
+#     print(f'Pažymiai:  {pazymiai}')
+#     vidurkis = sum(pazymiai) / len(pazymiai) if pazymiai else 0
+#     print(f'Vidurkis: {vidurkis}')
+# vardas1 = 'Justas'
+# pavarde1 = 'Jonaitis'
+# pazymiai1 = [10, 10, 8, 4, 10]
+#
+# vardas2 = 'Jonas'
+# pavarde2 = 'Justaitis'
+# pazymiai2 = [3, 10, 10, 9, 10]
+#
+# masyvas(vardas1, pavarde1, pazymiai1)
+# masyvas(vardas2, pavarde2, pazymiai2)
+
+
+#16.Susikurkite funkciją,
+# kuri per argumentus priimtų skaičių masyvą.
+# Funkcija turėtų rasti didžiausią skaičių iš masyvo
+# bei išvesti gautą atsakymus.
+# Taip pat, susikurkite funkciją,
+# kuri per argumentus priimtų masyvą ir į jį sugeneruotų pasirinktą kiekį atsitiktinių skaičių. Susikurkite tris tuščius
+# masyvus.
+# Iškvieskite atsitiktinių skaičių generavimo funkciją tris kartus,
+# kiekvieną kartą perduodant funkcijai vis kitą masyvą.
+# Kai duomenys bus užpildyti, masyvuose esančią informaciją
+# išsiveskite norimu būdu (per console.log arba per dar atskirą funkciją).
+# Tuomet kvieskite didžiausio skaičiaus paieškos funkciją tris kartus, kiekvieną kartą perduodant
+# skirtingą masyvą į ją.
+
+# import random
+#
+# def rasti_didziausi(masyvas):
+#     didziausias = max(masyvas)
+#     print(f'Didžiausias skaičius: {didziausias}')
+#
+# def random_skaiciai(masyvas, kiekis):
+#     for _ in range(kiekis):
+#         rand_skaicius = random.randint(1, 100)
+#         masyvas.append(rand_skaicius)
+#
+# masyvas1 = []
+# masyvas2 = []
+# masyvas3 = []
+#
+# random_skaiciai(masyvas1, 10)
+# random_skaiciai(masyvas2, 10)
+# random_skaiciai(masyvas3, 10)
+#
+# print('Masyvas 1:', masyvas1)
+# print('Masyvas 2:', masyvas2)
+# print('Masyvas 3:', masyvas3)
+#
+# rasti_didziausi(masyvas1)
+# rasti_didziausi(masyvas2)
+# rasti_didziausi(masyvas3)
+
+# 17..Susikurkite funkciją,
+# kuri grąžintų bet kokį jūsų norimą sakinį.
+# Iškvieskite šią funkciją ir išspausdinkite gautus rezultatus.
+
+# def norim_sakin():
+#     return "Geras sakinys"
+# sakinys = norim_sakin()
+# print(sakinys)
+
+#18. Susikurkite funkciją,
+# kuri grąžintų atsitiktinai sugeneruotą skaičių.
+# Iškvieskite šią funkciją kelis kartus ir
+# gautus atsakymus išveskite kokiu norite būdu.
+
+# import random
+#
+# def skaiciai():
+#     return random.randint(1, 25)
+#
+# skaicius1 = skaiciai()
+# skaicius2 = skaiciai()
+# skaicius3 = skaiciai()
+#
+# print(f'Atsitiktinis skaičius: {skaicius1}')
+# print(f'Atsitiktinis skaičius: {skaicius2}')
+# print(f'Atsitiktinis skaičius: {skaicius3}')
+
+
+# 19.Susikurkite funkciją, kuri per argumentus priimtų studento vardą ir
+# vidurkį.
+# Ši funkcija turėtų sugeneruoti iš to sakinį (pvz Studentas Tomas
+# turi vidurkį 8.7) ir tai grąžinti kaip atsakymą.
+# Iškvieskite šią funkciją bent porą kartų,
+# perduodant vis skirtingus duomenis. Gautus atsakymus išveskite.
+
+# def studento_info(vardas, vidurkis):
+#     return f'Studentas {vardas} turi vidurkį {vidurkis}'
+#
+# tekstas1 = studento_info('Justas', '10')
+# tekstas2 = studento_info('Rugilė', '9.5')
+#
+# print(tekstas1)
+# print(tekstas2)
+
+# 20.Susikurkite funkciją, kuri per argumentus gautų skaičių.
+# Ji turėtų surasti duoto skaičiaus mažiausią daliklį
+# (skaičių iš kurio dalinasi be liekanos).
+# Už funkcijos ribų sukite ciklą nuo 10 iki 30
+# ir kiekvienoje ciklo iteracijoje iškvieskite šią funkciją, perduodant ciklo kintamąjį.
+
+# def maziausias_daliklis(skaicius):
+#     for i in range(2, skaicius + 1):
+#         if skaicius % i == 0:
+#             return i
+# for skaicius in range(10, 31):
+#     daliklis = maziausias_daliklis(skaicius)
+#     print(f'Skaičius {skaicius} mažiausias daliklis yra {daliklis}')
+
