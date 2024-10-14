@@ -740,7 +740,7 @@
 # r_vidurkis = vidurkis(random_skaiciai)
 # print(f'Vidurkis: {r_vidurkis}')
 
-#9. Sukurkite Funkciją kuri priimtų du int skaičius
+# 9. Sukurkite Funkciją kuri priimtų du int skaičius
 # ir atspausdintų stačiakampį užpildytą žvaigždutėmis.
 # Pirmas int - išoriniam ciklui, antras vidiniam.
 
@@ -763,7 +763,14 @@
 # sakinys = "Šiandien labai graži diena"
 # sakin(sakinys)
 
-
+#11. Sukurkite Funkciją
+# kuri priimtų sakinį, jį užkoduotų ir grąžintų.
+# Kodavimas - sakinį apsukame iš kitos pusės.
+# Pvz “Naglis” turi gautis “silgaN”.
+# def uzk_sakinys(sakinys):
+#     return sakinys[::-1]
+# uzk = uzk_sakinys('Vaflis')
+# print(uzk)
 #                       sunkesni
 # 1. Parašykite funkciją, kurios argumentas būtų tekstas,
 # kuris būtų atspausdinamas konsolėje pridedant “---” pradžioje ir gale.
@@ -810,4 +817,3 @@
 # print('Sugeneruotas stringas:', random_string)
 # spausdint_simbolius(random_string)
 
-dd
