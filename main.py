@@ -865,3 +865,24 @@
 # prie masyvo pridėkite dar vieną elementą- atsitiktinį skaičių nuo 1 iki 33.
 # Vėl patikrinkite pradinę sąlygą ir jeigu reikia pridėkite dar vieną elementą.
 # Kartokite, kol sąlyga nereikalaus pridėti elemento.
+
+# import random
+#
+# def is_prime(num):
+#     if num < 2:
+#         return False
+#     for i in range(2, int(num**0.5) + 1):
+#         if num % i == 0:
+#             return False
+#     return True
+#
+# atsitiktiniai = [random.randint(1, 33) for _ in range(3)]
+# while True:
+#     paskutiniai_sk = atsitiktiniai[-3:]
+#     if any(not is_prime(num) for num in paskutiniai_sk):
+#         atsitiktiniai.append(random.randint(1,33))
+#     else:
+#         break
+# print(atsitiktiniai)
+
+
