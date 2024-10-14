@@ -817,3 +817,51 @@
 # print('Sugeneruotas stringas:', random_string)
 # spausdint_simbolius(random_string)
 
+# 3.Parašykite funkciją,
+# kuri skaičiuotų, ir gražintų iš kiek sveikų skaičių
+# jos argumentas dalijasi be liekanos (išskyrus vienetą ir patį save).
+
+# def  dalyba(n):
+#     dalintojai = 0
+#     for i in range(2, n):
+#         if n % i == 0:
+#             dalintojai += 1
+#     return dalintojai
+# print(dalyba(16))
+
+# 4. Sugeneruokite masyvą iš 100 elementų,
+# kurio reikšmės atsitiktiniai skaičiai nuo 33 iki 77.
+# Išrūšiuokite masyvą pagal daliklių be liekanos kiekį mažėjimo tvarka,
+# # panaudodami trečio uždavinio funkciją.
+# import random
+# def dalyba(n):
+#     dalintojai = 0
+#     for i in range(2, n):
+#         if n % i == 0:
+#             dalintojai += 1
+#     return dalintojai
+# masyvas = [random.randint(33, 77) for _ in range(100)]
+# masyvas.sort(reverse=True)
+# print(masyvas)
+
+# 5.Sugeneruokite masyvą iš 100 elementų,
+# kurio reikšmės atsitiktiniai skaičiai nuo 333 iki 777.
+# Naudodami 3 uždavinio funkciją iš masyvo suskaičiuokite
+# kiek yra pirminių skaičių.
+# import random
+# masyvas = [random.randint(333, 777) for _ in range(100)]
+# def pirminis(skaicius):
+#     if skaicius < 2:
+#         return False
+#     for i in range(2, int(skaicius**0.5) +1):
+#         return False
+#     return True
+# kiekis = sum(1 for skaicius in masyvas if pirminis(skaicius))
+# print(f'Pirminiai skaičiai masyve: {kiekis}')
+
+#8. Sugeneruokite masyvą iš trijų elementų,
+# kurie yra atsitiktiniai skaičiai nuo 1 iki 33.
+# Jeigu tarp trijų paskutinių elementų yra nors vienas ne pirminis skaičius,
+# prie masyvo pridėkite dar vieną elementą- atsitiktinį skaičių nuo 1 iki 33.
+# Vėl patikrinkite pradinę sąlygą ir jeigu reikia pridėkite dar vieną elementą.
+# Kartokite, kol sąlyga nereikalaus pridėti elemento.
