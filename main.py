@@ -893,29 +893,41 @@
 # suraskite masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3.
 # Vėl paskaičiuokite masyvo pirminių skaičių vidurkį
 # ir jeigu mažesnis nei 70 viską kartokite.
+# import random
+# def yra_pirminis(n):
+#     if n <= 1:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
+# masyvas = [[random.randint(1, 100) for _ in range(10)] for _ in range(10)]
+# def pirminiai_vidurkis(masyvas):
+#     pirminiai = [num for row in masyvas for num in row if yra_pirminis(num)]  # Pridėta 'if'
+#     return sum(pirminiai) / len(pirminiai) if pirminiai else 0
+# while True:
+#     vidurkis = pirminiai_vidurkis(masyvas)
+#     if vidurkis >= 70:
+#         break
+#     maziausias = min(num for row in masyvas for num in row)
+#     for i in range(len(masyvas)):
+#         for j in range(len(masyvas[i])):
+#             if masyvas[i][j] == maziausias:
+#                 masyvas[i][j] += 3
+#                 break
+# print("Galutinis masyvas:")
+# for row in masyvas:
+#     print(row)
+# print("Pirminių skaičių vidurkis:", vidurkis)
+
+
 import random
-def yra_pirminis(n):
-    if n <= 1:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
-masyvas = [[random.randint(1, 100) for _ in range(10)] for _ in range(10)]
-def pirminiai_vidurkis(masyvas):
-    pirminiai = [num for row in masyvas for num in row if yra_pirminis(num)]  # Pridėta 'if'
-    return sum(pirminiai) / len(pirminiai) if pirminiai else 0
-while True:
-    vidurkis = pirminiai_vidurkis(masyvas)
-    if vidurkis >= 70:
-        break
-    maziausias = min(num for row in masyvas for num in row)
-    for i in range(len(masyvas)):
-        for j in range(len(masyvas[i])):
-            if masyvas[i][j] == maziausias:
-                masyvas[i][j] += 3
-                break
-print("Galutinis masyvas:")
-for row in masyvas:
-    print(row)
-print("Pirminių skaičių vidurkis:", vidurkis)
+
+def generateRndStr(length):
+    symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    text = ""
+    for i in range(length):
+        text += symbols[random.randint(0, len(symbols) - 1)]
+    return text
+random_string = generateRndStr(10)
+print(random_string)
