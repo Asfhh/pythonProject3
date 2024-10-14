@@ -929,5 +929,5 @@ def generateRndStr(length):
     for i in range(length):
         text += symbols[random.randint(0, len(symbols) - 1)]
     return text
-random_string = generateRndStr(10)
-print(random_string)
+random_string = generateRndStr(12)
+print(f'Siūlomas slaptažodis: {random_string}')
