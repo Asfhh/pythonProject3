@@ -930,9 +930,9 @@ def generateRndStr(length):
         text += symbols[random.randint(0, len(symbols) - 1)]
     return text
 
-def issaugoti_pass(slaptazodis):
+def issaugoti_pass(slaptazodis, pavadinimas):
     with open('slaptazodis.txt', 'a') as file:
-        file.write(slaptazodis + '\n')
+        file.write(f'{pavadinimas}: {slaptazodis}\n')
 
 def read_passwords():
     try:
@@ -949,9 +949,10 @@ def main():
         random_string = generateRndStr(12)
         print(f'Siūlomas slaptažodis: {random_string}')
 
+        pavadinimas = input('Įveskite pavadinimą, kur naudositės šiuo slaptažodžiu (pvz., Instagram, Facebook, Gmail): ').strip()
         atsakymas = input('Ar slaptažodis Jums patinka? (taip/ne): ').strip().lower()
         if atsakymas == 'taip':
-            issaugoti_pass(random_string)
+            issaugoti_pass(random_string, pavadinimas)
             print('Slaptažodis išsaugotas!')
             break
         elif atsakymas == 'ne':
