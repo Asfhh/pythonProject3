@@ -921,13 +921,36 @@
 # print("Pirminių skaičių vidurkis:", vidurkis)
 
 
-import random
+# import random
+#
+# def generateRndStr(length):
+#     symbols = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890!#*.,"
+#     text = ""
+#     for i in range(length):
+#         text += symbols[random.randint(0, len(symbols) - 1)]
+#     return text
+# random_string = generateRndStr(12)
+# print(f'Siūlomas slaptažodis: {random_string}')
 
+import random
 def generateRndStr(length):
-    symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    symbols = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890!#*.,"
     text = ""
     for i in range(length):
         text += symbols[random.randint(0, len(symbols) - 1)]
     return text
-random_string = generateRndStr(12)
-print(f'Siūlomas slaptažodis: {random_string}')
+def main():
+    while True:
+        random_string = generateRndStr(12)
+        print(f'Siūlomas slaptažodis: {random_string}')
+
+        atsakymas = input('Ar slaptažodis Jums patinka? (taip/ne): ').strip().lower()
+        if atsakymas == 'taip':
+            print('Slaptazodis išsaugotas!')
+            break
+        elif atsakymas == 'ne':
+            print('Generuojamas naujas slaptažodis... ')
+        else:
+            print('Prašome įvesti "taip" arba "ne".')
+if __name__ == '__main__':
+    main()
