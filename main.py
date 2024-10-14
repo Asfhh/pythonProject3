@@ -885,4 +885,37 @@
 #         break
 # print(atsitiktiniai)
 
-
+# Sugeneruokite masyvą iš 10 elementų,
+# kurie yra masyvai iš 10 elementų,
+# kurie yra atsitiktiniai skaičiai nuo 1 iki 100.
+# Jeigu tokio didelio masyvo (ne atskirai mažesnių)
+# pirminių skaičių vidurkis mažesnis už 70,
+# suraskite masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3.
+# Vėl paskaičiuokite masyvo pirminių skaičių vidurkį
+# ir jeigu mažesnis nei 70 viską kartokite.
+import random
+def yra_pirminis(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+masyvas = [[random.randint(1, 100) for _ in range(10)] for _ in range(10)]
+def pirminiai_vidurkis(masyvas):
+    pirminiai = [num for row in masyvas for num in row if yra_pirminis(num)]  # Pridėta 'if'
+    return sum(pirminiai) / len(pirminiai) if pirminiai else 0
+while True:
+    vidurkis = pirminiai_vidurkis(masyvas)
+    if vidurkis >= 70:
+        break
+    maziausias = min(num for row in masyvas for num in row)
+    for i in range(len(masyvas)):
+        for j in range(len(masyvas[i])):
+            if masyvas[i][j] == maziausias:
+                masyvas[i][j] += 3
+                break
+print("Galutinis masyvas:")
+for row in masyvas:
+    print(row)
+print("Pirminių skaičių vidurkis:", vidurkis)
