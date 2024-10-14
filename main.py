@@ -939,6 +939,9 @@ def generateRndStr(length):
     for i in range(length):
         text += symbols[random.randint(0, len(symbols) - 1)]
     return text
+def issaugoti_pass(slaptazodis):
+    with open('slaptazodis.txt', 'a') as file:
+        file.write(slaptazodis + '\n')
 def main():
     while True:
         random_string = generateRndStr(12)
@@ -954,3 +957,4 @@ def main():
             print('Prašome įvesti "taip" arba "ne".')
 if __name__ == '__main__':
     main()
+
