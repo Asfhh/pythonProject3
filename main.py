@@ -964,8 +964,90 @@
 #     main()
 #     read_passwords()
 
-import random
+# import random
+#
+#
+# def generateRndStr(length):
+#     symbols = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890!#*.,"
+#     text = ""
+#     for i in range(length):
+#         text += symbols[random.randint(0, len(symbols) - 1)]
+#     return text
+#
+#
+# def issaugoti_pass(slaptazodis, pavadinimas):
+#     with open('slaptazodis.txt', 'a') as file:
+#         file.write(f'{pavadinimas}: {slaptazodis}\n')
+#
+#
+# def read_passwords():
+#     try:
+#         with open('slaptazodis.txt', 'r') as file:
+#             passwords = file.readlines()
+#             print("Išsaugoti slaptažodžiai:")
+#             for password in passwords:
+#                 print(password.strip())
+#     except FileNotFoundError:
+#         print("Failas 'slaptazodis.txt' dar neegzistuoja.")
+#
+#
+# def istrinti_slaptazodi(pavadinimas):
+#     try:
+#         with open('slaptazodis.txt', 'r') as file:
+#             passwords = file.readlines()
+#
+#         updated_passwords = [password for password in passwords if not password.startswith(f'{pavadinimas}:')]
+#
+#         if len(updated_passwords) == len(passwords):
+#             print(f"Slaptažodis su pavadinimu '{pavadinimas}' nerastas.")
+#         else:
+#             with open('slaptazodis.txt', 'w') as file:
+#                 file.writelines(updated_passwords)
+#             print(f"Slaptažodis '{pavadinimas}' ištrintas.")
+#     except FileNotFoundError:
+#         print("Failas 'slaptazodis.txt' dar neegzistuoja.")
+#
+#
+# def main():
+#     while True:
+#         action = input(
+#             "Pasirinkite veiksmą:\n"
+#             "'naujas' - naujas slaptažodis\n"
+#             "'trinti' - trinti slaptažodį\n"
+#             "'rodyti' - rodyti slaptažodžius\n"
+#             "'iseiti' - išeiti\n"
+#         ).strip().lower()
+#
+#         if action == 'naujas':
+#             random_string = generateRndStr(12)
+#             print(f'Siūlomas slaptažodis: {random_string}')
+#
+#             pavadinimas = input(
+#                 'Įveskite pavadinimą, kur naudositės šiuo slaptažodžiu (pvz., Instagram, Facebook, Gmail): ').strip()
+#             atsakymas = input('Ar slaptažodis Jums patinka? (taip/ne): ').strip().lower()
+#             if atsakymas == 'taip':
+#                 issaugoti_pass(random_string, pavadinimas)
+#                 print('Slaptažodis išsaugotas!')
+#             elif atsakymas == 'ne':
+#                 print('Generuojamas naujas slaptažodis...')
+#             else:
+#                 print('Prašome įvesti "taip" arba "ne".')
+#         elif action == 'trinti':
+#             pavadinimas = input("Įveskite pavadinimą slaptažodžio, kurį norite ištrinti: ").strip()
+#             istrinti_slaptazodi(pavadinimas)
+#         elif action == 'rodyti':
+#             read_passwords()
+#         elif action == 'iseiti':
+#             print("Programa baigta.")
+#             break
+#         else:
+#             print("Prašome pasirinkti galimą veiksmą.")
+#
+#
+# if __name__ == '__main__':
+#     main()
 
+import random
 
 def generateRndStr(length):
     symbols = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890!#*.,"
@@ -974,11 +1056,9 @@ def generateRndStr(length):
         text += symbols[random.randint(0, len(symbols) - 1)]
     return text
 
-
 def issaugoti_pass(slaptazodis, pavadinimas):
     with open('slaptazodis.txt', 'a') as file:
         file.write(f'{pavadinimas}: {slaptazodis}\n')
-
 
 def read_passwords():
     try:
@@ -989,7 +1069,6 @@ def read_passwords():
                 print(password.strip())
     except FileNotFoundError:
         print("Failas 'slaptazodis.txt' dar neegzistuoja.")
-
 
 def istrinti_slaptazodi(pavadinimas):
     try:
@@ -1007,6 +1086,26 @@ def istrinti_slaptazodi(pavadinimas):
     except FileNotFoundError:
         print("Failas 'slaptazodis.txt' dar neegzistuoja.")
 
+def redaguoti_slaptazodi(pavadinimas):
+    try:
+        with open('slaptazodis.txt', 'r') as file:
+            passwords = file.readlines()
+
+        if not any(password.startswith(f'{pavadinimas}:') for password in passwords):
+            print(f"Slaptažodis su pavadinimu '{pavadinimas}' nerastas.")
+            return
+
+        new_password = generateRndStr(12)
+        print(f'Naujas slaptažodis: {new_password}')
+
+        updated_passwords = [f'{pavadinimas}: {new_password}\n' if password.startswith(f'{pavadinimas}:') else password for password in passwords]
+
+        with open('slaptazodis.txt', 'w') as file:
+            file.writelines(updated_passwords)
+
+        print(f"Slaptažodis '{pavadinimas}' atnaujintas.")
+    except FileNotFoundError:
+        print("Failas 'slaptazodis.txt' dar neegzistuoja.")
 
 def main():
     while True:
@@ -1014,6 +1113,7 @@ def main():
             "Pasirinkite veiksmą:\n"
             "'naujas' - naujas slaptažodis\n"
             "'trinti' - trinti slaptažodį\n"
+            "'redaguoti' - redaguoti slaptažodį\n"
             "'rodyti' - rodyti slaptažodžius\n"
             "'iseiti' - išeiti\n"
         ).strip().lower()
@@ -1022,8 +1122,7 @@ def main():
             random_string = generateRndStr(12)
             print(f'Siūlomas slaptažodis: {random_string}')
 
-            pavadinimas = input(
-                'Įveskite pavadinimą, kur naudositės šiuo slaptažodžiu (pvz., Instagram, Facebook, Gmail): ').strip()
+            pavadinimas = input('Įveskite pavadinimą, kur naudositės šiuo slaptažodžiu (pvz., Instagram, Facebook, Gmail): ').strip()
             atsakymas = input('Ar slaptažodis Jums patinka? (taip/ne): ').strip().lower()
             if atsakymas == 'taip':
                 issaugoti_pass(random_string, pavadinimas)
@@ -1035,6 +1134,9 @@ def main():
         elif action == 'trinti':
             pavadinimas = input("Įveskite pavadinimą slaptažodžio, kurį norite ištrinti: ").strip()
             istrinti_slaptazodi(pavadinimas)
+        elif action == 'redaguoti':
+            pavadinimas = input("Įveskite pavadinimą slaptažodžio, kurį norite redaguoti: ").strip()
+            redaguoti_slaptazodi(pavadinimas)
         elif action == 'rodyti':
             read_passwords()
         elif action == 'iseiti':
@@ -1042,7 +1144,6 @@ def main():
             break
         else:
             print("Prašome pasirinkti galimą veiksmą.")
-
 
 if __name__ == '__main__':
     main()
